@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 
-// Отключаем CSRF для API-подобных маршрутов (иначе POST/PUT не пройдут)
-Route::withoutMiddleware('web');
 
 Route::get('/tasks', [TaskController::class, 'index']);
 Route::post('/tasks', [TaskController::class, 'store']);
